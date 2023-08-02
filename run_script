@@ -1,0 +1,119 @@
+
+
+## DeepCoNN   dataset=automotive_data
+
+train --model=DeepCoNN --num_fea=1 --output=fm --dataset=automotive_data
+test --pth_path="./checkpoints/DeepCoNN_automotive_data_default.pth" --model=DeepCoNN --dataset=automotive_data --num_fea=1 --output=fm
+
+train --model=MPCN --num_fea=1 --output=fm --dataset=automotive_data
+test --pth_path="./checkpoints/MPCN_automotive_data_default.pth" --model=MPCN --dataset=automotive_data --num_fea=1 --output=fm
+
+
+
+train --model=DeepCoNN --num_fea=1 --output=fm --dataset=cellphone_data
+test --pth_path="./checkpoints/DeepCoNN_cellphone_data_default.pth" --model=DeepCoNN --dataset=cellphone_data --num_fea=1 --output=fm
+
+
+
+python3 main.py train --model=NARRE --num_fea=2 --output=lfm
+
+
+
+###########
+train --model=DeepCoNN --dataset=largemusic_data --num_fea=1 --output=fm
+train --model=DeepCoNN --dataset=largemusic_data --num_fea=1 --output=mlp
+train --model=MPCN --dataset=largemusic_data --num_fea=1 --output=fm
+train --model=D_ATTN --dataset=largemusic_data --num_fea=1 --output=fm
+train --model=NARRE --dataset=largemusic_data --num_fea=2 --output=fm
+
+
+
+##########
+train --model=DeepCoNN --dataset=largeautomotive_data --num_fea=1 --output=fm
+train --model=MPCN --dataset=largeautomotive_data --num_fea=1 --output=fm
+train --model=NARRE --dataset=largeautomotive_data --num_fea=2 --output=fm
+train --model=DAML --dataset=largeautomotive_data --num_fea=2 --output=fm
+train --model=D_ATTN --dataset=largeautomotive_data --num_fea=1 --output=fm
+train --model=MPCN --dataset=largeautomotive_data --num_fea=1 --gpu_id=0
+
+
+
+
+##############
+
+train --model=DeepCoNN --dataset=largecellphone_data --num_fea=1 --output=fm
+train --model=DeepCoNN --dataset=largecellphone_data --num_fea=1 --output=mlp
+test --pth_path="./checkpoints/DeepCoNN_largecellphone_data_default.pth" --model=DeepCoNN --dataset=largecellphone_data --num_fea=1 --output=fm
+
+train --model=MPCN --dataset=largecellphone_data --num_fea=1 --output=fm
+train --model=DAML --dataset=largecellphone_data --num_fea=2
+
+train --model=DAML --dataset=largecellphone_kg_data --num_fea=2
+
+
+###########
+train --model=DeepCoNN --dataset=largecellphone_kg_data --num_fea=1 --output=fm
+
+
+
+###############
+train --model=DeepCoNN --dataset=electronic_data --num_fea=1 --output=fm --gpu_id=0
+train --model=DeepCoNN --dataset=electronic_filter_data_not_retain_rui --num_fea=1 --output=fm --gpu_id=1
+
+
+train --model=DeepCoNN --dataset=electronic_rui --num_fea=1 --output=fm --gpu_id=1
+
+train --model=DAML --dataset=music_filter --num_fea=2 --output=fm --gpu_id=1 --batch_size=46
+
+train --model=DAML --dataset=electronic_rui --num_fea=2 --output=fm --gpu_id=1 --batch_size=46
+
+
+train --model=DeepCoNN --dataset=electronic_filter --num_fea=1 --output=fm --gpu_id=0
+
+
+train --model=DeepCoNN --dataset=new_automotive_filter --num_fea=1 --output=fm --gpu_id=2
+
+
+####################
+train --model=DAML --dataset=new_electronic_filter --num_fea=2 --output=fm --gpu_id=1 --batch_size=18
+train --model=DAML --dataset=new_electronic_filter --num_fea=2 --output=fm --gpu_id=1 --batch_size=18
+
+
+train --model=DAML --dataset=with_exp_automotive --num_fea=2 --output=fm --gpu_id=1 --batch_size=46
+
+train --model=DeepCoNN --dataset=with_exp_automotive --num_fea=2 --output=fm --gpu_id=1 --batch_size=46
+
+train --model=DeepCoNN --dataset=with_exp_cellphone --num_fea=1 --output=fm --gpu_id=2 --batch_size=2048
+
+train --model=DeepCoNN --dataset=with_exp_clothing --num_fea=1 --output=fm --gpu_id=3 --batch_size=2048
+
+train --model=DAML --dataset=with_exp_electronic --num_fea=2 --output=fm --gpu_id=0 --batch_size=46
+
+train --model=DAML --dataset=with_exp_automotive --num_fea=2 --output=fm --gpu_id=0 --batch_size=46
+
+
+test --pth_path="./checkpoints/DAML_kg_with_exp_automotive_aspect.pth" --model=DAML --dataset=with_exp_automotive --num_fea=2 --output=fm
+
+train --model=DeepCoNN --dataset=with_exp_electronic --num_fea=1 --output=fm --gpu_id=2 --batch_size=2048
+
+
+train --model=DAML --dataset=with_exp_automotive --num_fea=2 --output=fm --gpu_id=0 --batch_size=46
+train --model=DAML --dataset=with_exp_cellphone --num_fea=2 --output=fm --gpu_id=0 --batch_size=46
+train --model=DAML --dataset=with_exp_cellphone2 --num_fea=2 --output=fm --gpu_id=1 --batch_size=46
+train --model=DAML --dataset=with_exp_clothing --num_fea=2 --output=fm --gpu_id=0 --batch_size=46
+train --model=DAML --dataset=with_exp_music --num_fea=2 --output=fm --gpu_id=0 --batch_size=20
+
+train --model=BERT --dataset=with_exp_cellphone --num_fea=2 --output=fm --gpu_id=0 --batch_size=13
+train --model=DAML --dataset=with_exp_automotive_old --num_fea=2 --output=fm --gpu_id=2 --batch_size=20
+
+train --model=DAML --dataset=with_exp_clothing2 --num_fea=2 --output=fm --gpu_id=1 --batch_size=46
+
+
+clothing_BERT_KG_asp_cat_2asp
+
+BERT_kg_rating_exp_clothing_aspect.pth
+
+
+验证
+test --model=BERT --dataset=rating_exp_toys2 --lr=0.00006 --aspect_merge=cat2 --num_fea=2 --output=fm --gpu_id=1 --batch_size=32 --pth_path=BERT_kg_rating_exp_toys2_aspectasp24.pth
+test --model=BERT --dataset=rating_exp_movie3 --lr=0.00016 --aspect_merge=cat2 --num_fea=2 --output=fm --gpu_id=1 --batch_size=32 --pth_path=BERT_kg_rating_exp_movie3_aspect.pth
